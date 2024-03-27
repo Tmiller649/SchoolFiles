@@ -1,0 +1,28 @@
+import math 
+  
+# define a function egyptianFraction  
+# which receive parameter nr as 
+# numerator and dr as denominator 
+def egyptianFraction(n, d): 
+  
+    print("The Egyptian Fraction " +
+          "Representation of {0}/{1} is". 
+                format(n, d), end="\n") 
+    # empty list ef to store 
+    # denominator 
+    fracs = [] 
+    n=n/1.0
+    d=d/1.0
+ 
+    while n != 0: 
+        fin = math.ceil(d / n) 
+        fracs.append(fin) 
+        n = fin * n - d 
+        d = d * fin 
+    for j in range(len(fracs)): 
+        if j != len(fracs) - 1: 
+            print(" 1/{0} +" .  
+                    format(fracs[j]), end = " ") 
+        else: 
+            print(" 1/{0}" . 
+                    format(fracs[j]), end = " ")
